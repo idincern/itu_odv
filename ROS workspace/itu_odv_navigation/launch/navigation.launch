@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+	<node pkg="itu_odv_navigation" name="inverse_kinematics" type="inv_kinematics.py" output="screen"/>
+	<node pkg="itu_odv_navigation" name="forward_kinematics" type="fwd_kinematics.py" output="screen"/>	
+	<node pkg="itu_odv_navigation" name="odom_calculator" type="odom_calculator.py" output="screen"/>
+</launch>

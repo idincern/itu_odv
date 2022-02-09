@@ -1,0 +1,21 @@
+footprint: [[-0.33, -0.33], [-0.33, 0.33], [0.33, 0.33], [0.33, -0.33]]
+footprint_padding: 0.01
+robot_base_frame: base_link
+transform_tolerance: 0.25
+
+obstacle_layer:
+  enabled: true
+  obstacle_range: 3.0
+  raytrace_range: 3.5
+  track_unknown_space: true
+  combination_method: 1
+  observation_sources: laser_sensor
+  laser_sensor: {data_type: LaserScan, topic: /scan_multi, marking: true, clearing: true}
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  3  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius: 0.36
+  
+
+

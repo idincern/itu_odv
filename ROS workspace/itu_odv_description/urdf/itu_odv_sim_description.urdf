@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="itu_odv_description">
+  <!-- base_link -->
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="3.1086E-15 3.1114E-14 0.063778"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.0838"
+        ixy="2.8145E-10"
+        ixz="-9.7612E-15"
+        iyy="0.079577"
+        iyz="-3.0801E-17"
+        izz="0.15789" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <!-- front_right_wheel_link -->
+  <link
+    name="front_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="-5.2003E-09 -1.5816E-05 -7.4067E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00072883"
+        ixy="2.5798E-11"
+        ixz="-2.3168E-10"
+        iyy="0.0013926"
+        iyz="-3.7292E-11"
+        izz="0.00072883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-5.2003E-09 -1.5816E-05 -7.4067E-09"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.265 -0.275 -0.0053038"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <!--<transmission name="front_right_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_right_wheel_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="front_right_wheel_link">
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>-->
+  <!-- front_left_wheel_link -->
+  <link
+    name="front_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-1.2223E-09 1.599E-05 1.0161E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00072883"
+        ixy="4.9301E-13"
+        ixz="-1.1558E-10"
+        iyy="0.0013926"
+        iyz="-2.5587E-11"
+        izz="0.00072883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.67843 0.67843 0.72941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-5.2003E-09 -1.5816E-05 -7.4067E-09"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.265 0.275 -0.0053038"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <!--<transmission name="front_left_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_left_wheel_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="front_left_wheel_link">
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>-->
+  <!-- rear_right_wheel_link -->
+  <link
+    name="rear_right_wheel_link">
+    <inertial>
+      <origin
+        xyz="9.4049E-12 1.599E-05 9.4543E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00072883"
+        ixy="2.1862E-12"
+        ixz="-3.7811E-10"
+        iyy="0.0013926"
+        iyz="-1.9384E-11"
+        izz="0.00072883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.67843 0.67843 0.72941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-5.2003E-09 -1.5816E-05 -7.4067E-09"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.265 -0.275 -0.0053038"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <!--<transmission name="rear_right_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_right_wheel_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rear_right_wheel_link">
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>-->
+  <!-- rear_left_wheel_link -->
+  <link
+    name="rear_left_wheel_link">
+    <inertial>
+      <origin
+        xyz="-5.1274E-09 -1.5816E-05 -7.7023E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00072883"
+        ixy="3.1087E-11"
+        ixz="-2.0848E-10"
+        iyy="0.0013926"
+        iyz="-3.4598E-11"
+        izz="0.00072883" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="-5.2003E-09 -1.5816E-05 -7.4067E-09"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.265 0.275 -0.0053038"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+  </joint>
+  <!--<transmission name="rear_left_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_left_wheel_joint_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rear_left_wheel_link">
+    <mu1 value="1.0"/>
+    <mu2 value="1.0"/>
+    <kp value="10000000.0"/>
+    <kd value="1.0"/>
+    <fdir1 value="1 0 0"/>
+    <turnGravityOff>false</turnGravityOff>
+  </gazebo>-->
+  <!-- front_laser -->
+  <link
+    name="front_laser_link">
+    <inertial>
+      <origin
+        xyz="-0.00064383 1.0317E-09 -0.0031678"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0.00020894"
+        ixy="1.8032E-12"
+        ixz="-1.1307E-06"
+        iyy="0.00021335"
+        iyz="-4.3679E-12"
+        izz="0.00011244" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/front_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.25602 -0.21602 0.1487"
+      rpy="3.1416 0 -0.7854" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!-- laser plugin -->
+  <gazebo reference="front_laser_link">
+    <sensor name="front_laser_link" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>810</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.35619449</min_angle>
+            <max_angle>2.35619449</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser achieving 
+						"+-30mm" accuracy at range < 10m. A mean of 0.0m and stddev of 0.01m will 
+						put 99.7% of samples within 0.03m of the true reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_head_hokuyo_controller">
+        <topicName>scan_front</topicName>
+        <frameName>front_laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- rear_laser -->
+  <link
+    name="rear_laser_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.1" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://itu_odv_description/meshes/rear_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_laser_joint"
+    type="fixed">
+    <origin
+      xyz="-0.25602 0.21602 0.1487"
+      rpy="-3.1416 0 2.3562" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <!-- laser plugin -->
+  <gazebo reference="rear_laser_link">
+    <sensor name="rear_laser_link" type="ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>810</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.35619449</min_angle>
+            <max_angle>2.35619449</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise parameters based on published spec for Hokuyo laser achieving 
+						"+-30mm" accuracy at range < 10m. A mean of 0.0m and stddev of 0.01m will 
+						put 99.7% of samples within 0.03m of the true reading. -->
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_laser.so" name="gazebo_ros_head_hokuyo_controller">
+        <topicName>scan_rear</topicName>
+        <frameName>rear_laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <!-- imu link -->
+  <link name="imu_link">
+	<inertial>
+		<mass value="1e-5" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+	</inertial>
+
+	<visual>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+			<box size="0.01 0.01 0.01" />
+		</geometry>
+	</visual>
+
+	<collision>
+		<origin xyz="0 0 0" rpy="0 0 0" />
+		<geometry>
+			<box size="0.01 0.01 0.01" />
+		</geometry>
+	</collision>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+	<axis xyz="0 1 0" />
+		<origin xyz="0 0 0.1" rpy="0 0 0" /> 
+		<parent link="base_link" />
+		<child link="imu_link" />
+  </joint>
+  
+  
+  
+  <!-- colors -->
+  <gazebo reference="base_link">
+  	<material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="front_right_wheel_link">
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="front_left_wheel_link">
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="rear_right_wheel_link">
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="rear_left_wheel_link">
+  	<material>Gazebo/Grey</material>
+  </gazebo>
+  <gazebo reference="front_laser_link">
+  	<material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo reference="rear_laser_link">
+  	<material>Gazebo/DarkGrey</material>
+  </gazebo>
+  <gazebo>
+  <!-- omni steering -->
+       <plugin name="omni_steering" filename="libgazebo_ros_planar_move.so">
+	  <commandTopic>cmd_vel</commandTopic>
+	  <odometryTopic>odom</odometryTopic>
+	  <odometryFrame>odom</odometryFrame>
+	  <odometryRate>50.0</odometryRate>
+	  <robotBaseFrame>base_link</robotBaseFrame>
+	  <publishTF>true</publishTF>
+       </plugin>
+   <!-- imu     -->
+       <plugin name='imu_controller' filename='libgazebo_ros_imu.so'>
+        <bodyName>imu_link</bodyName>
+        <topicName>imu/data</topicName>
+        <alwaysOn>true</alwaysOn>
+        <serviceName>imu_service</serviceName>
+        <gaussianNoise>0.0</gaussianNoise>
+        <updateRate>50.0</updateRate><!--
+        <accelDrift>0.005 0.005 0.005</accelDrift>
+        <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+        <rateDrift>0.005 0.005 0.005</rateDrift>
+        <rateGaussianNoise>0.005 0.005 0.005</rateGaussianNoise>
+        <headingDrift>0.005</headingDrift>
+        <headingGaussianNoise>0.005</headingGaussianNoise>-->
+       </plugin>
+  <!-- ground truth 
+     <plugin filename="libgazebo_ros_p3d.so" name="p3d_base_controller">
+      <alwaysOn>true</alwaysOn>
+      <updateRate>100.0</updateRate>
+      <bodyName>base_link</bodyName>
+      <topicName>robot_ground_truth</topicName>
+      <gaussianNoise>0.01</gaussianNoise>
+      <frameName>map</frameName>
+      <xyzOffsets>0 0 0</xyzOffsets>
+      <rpyOffsets>0 0 0</rpyOffsets>
+    </plugin>-->
+  </gazebo>
+</robot>

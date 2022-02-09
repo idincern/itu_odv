@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <!--for laser sensors-->
+  <include file="$(find itu_odv_description)/launch/laser_sensors.launch"/>
+  
+  <!--for imu sensor-->
+  <include file="$(find itu_odv_description)/launch/imu_sensor.launch"/>      
+</launch>

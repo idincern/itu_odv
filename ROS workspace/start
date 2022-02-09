@@ -1,0 +1,45 @@
+---------------------Terminal 0-----------------------tb
+roscore
+---------------------Terminal 1-----------------------ws
+roslaunch itu_odv_startup teleop_start.launch
+---------------------Terminal 2-----------------------ws
+roslaunch itu_odv_startup nav_start.launch
+---------------------Terminal 3-----------------------tb
+sudo chmod a+rw /dev/ttyACM0
+rosrun rosserial_python serial_node.py /dev/ttyACM0    
+---------------------Terminal 4-----------------------ws
+roslaunch itu_odv_startup vis_start.launch             
+--------------------Open vehicle------------------------
+--------------------Open lidars-------------------------
+---------------------Terminal 5-----------------------tb
+sudo chmod a+rw /dev/ttyACM1 
+sudo chmod a+rw /dev/ttyACM2 
+sudo chmod a+rw /dev/ttyUSB0 
+roslaunch itu_odv_startup sensors_start.launch
+---------------------Terminal 6-----------------------ws
+roslaunch itu_odv_navigation hector_slam.launch 
+---------------------Terminal 7-----------------------ws
+rosrun itu_odv_navigation trianglepath.py 
+---------------------Terminal 8-----------------------ws
+rosrun follow_waypoints hexapath.py                                      
+---------------------Terminal 9----------------------ws
+rosbag record -a                                       
+--------------------------------------------------------
+
+Ek komutlar:
+turtlebot
+gedit ~/.bashrc
+rosrun map_server map_saver -f mapname
+rosrun rqt_graph rqt_graph
+rosrun rqt_tf_tree rqt_tf_tree
+rostopic list
+rosnode list
+dmesg | grep tty
+lsusb
+ls -l /dev/ttyUSB0
+ls -l /dev/ttyACM1
+ls -l /dev/ttyACM2
+sudo chmod a+rw /dev/ttyACM1 		//front_laser perm
+sudo chmod a+rw /dev/ttyACM2 		//rear_laser perm
+sudo chmod a+rw /dev/ttyUSB0 		//imu perm
+-------------------------------------------------------

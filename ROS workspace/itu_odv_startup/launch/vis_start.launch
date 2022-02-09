@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <include file="$(find itu_odv_visualization)/launch/itu_odv_display.launch"/>
+</launch>

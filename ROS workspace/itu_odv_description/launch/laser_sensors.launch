@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- A simple launch file for the urg_node package and laserscan_multi_merger package -->
+
+<!--  When using an IP-connected LIDAR, populate the "ip_address" parameter with the address of the LIDAR.
+      Otherwise, leave it blank. If supported by your LIDAR, you may enable the publish_intensity
+      and/or publish_multiecho options. -->
+
+<!-- laserscan front --> 
+  <node name="front_laser_node" pkg="urg_node" type="urg_node" output="screen">
+    <param name="ip_address" value=""/>
+    <param name="serial_port" value="/dev/ttyACM1"/>
+    <param name="serial_baud" value="115200"/>
+    <param name="frame_id" value="/front_laser_link"/>
+    <param name="calibrate_time" value="true"/>
+    <param name="publish_intensity" value="false"/>
+    <param name="publish_multiecho" value="false"/>
+    <param name="angle_min" value="2.2689"/>
+    <param name="angle_max" value="-2.2689"/>
+    <remap from="scan" to="scan_front"/>
+  </node>
+  
+<!-- laserscan rear --> 
+    <node name="rear_laser_node" pkg="urg_node" type="urg_node" output="screen">
+    <param name="ip_address" value=""/>
+    <param name="serial_port" value="/dev/ttyACM2"/>
+    <param name="serial_baud" value="115200"/>
+    <param name="frame_id" value="/rear_laser_link"/>
+    <param name="calibrate_time" value="true"/>
+    <param name="publish_intensity" value="false"/>
+    <param name="publish_multiecho" value="false"/>
+    <param name="angle_min" value="2.2689"/>
+    <param name="angle_max" value="-2.2689"/>
+    <remap from="scan" to="scan_rear"/>
+  </node>
+  
+<!-- laserscan_multi_merger from ira_laser_tools package -->
+  <node pkg="ira_laser_tools" name="laserscan_multi_merger" type="laserscan_multi_merger" output="screen">
+    <param name="destination_frame" value="/base_link"/>
+    <param name="angle_min" value="-3.14159"/>
+    <param name="angle_max" value="3.14159"/>
+    <param name="cloud_destination_topic" value="/merged_cloud"/>
+    <param name="scan_destination_topic" value="/scan_multi"/>
+    <param name="laserscan_topics" value ="/scan_front /scan_rear" />
+  </node>
+</launch>

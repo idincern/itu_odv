@@ -1,0 +1,4 @@
+roslaunch itu_odv_simulation itu_odv_sim.launch
+roslaunch itu_odv_visualization itu_odv_sim_display.launch
+roslaunch itu_odv_navigation hector_slam_sim.launch 
+rosrun itu_odv_navigation loadcarry.py
